@@ -8,3 +8,5 @@ db.sqlite3
 local_settings.py
 *.pyc
 settings.txt
+vk_oauth/migrations/*
+migrations
