@@ -25,8 +25,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = True
 
 SOCIAL_AUTH_POSTGRES_JSONFIELD = True
-SOCIAL_AUTH_VK_OAUTH2_KEY = '6488021'
-SOCIAL_AUTH_VK_OAUTH2_SECRET = 'MXCe08pLcbyYNkmOyiBR'
+SOCIAL_AUTH_VK_OAUTH2_KEY = os.environ['SOCIAL_AUTH_VK_OAUTH2_KEY']
+SOCIAL_AUTH_VK_OAUTH2_SECRET = os.environ['SOCIAL_AUTH_VK_OAUTH2_SECRET']
 SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['friends','email']
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 LOGIN_REDIRECT_URL = '/vk_oauth/'
