@@ -1,0 +1,57 @@
+{% extends "vk_oauth/base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="social-buttons">
+            {% if request.user.is_authenticated == False %}
+            <a href="/login/vk-oauth2">
+                <img src='{% static "vk_oauth/images/vk_logo.png" %}' data-toggle="tooltip"
+                    title="Авторизация Вконтакте" />
+
+                <a href="/login/vk-oauth2">
+                    <input type="submit" value="Войти" />
+                </a>
+                {% endif %}
+                {% if request.user.is_authenticated == True %}
+                {% for ass in backends.associated %}
+                {% if ass.provider == 'vk-oauth2' %}
+                <a href="/vk_oauth/logout/">
+                    <img src='{% static "vk_oauth/images/vk_logo.png" %}' data-toggle="tooltip"
+                        title="Авторизация Вконтакте" />
+                    <a href="/vk_oauth/friends">
+                        <input type="button" value="Друзья" />
+                    </a>
+                    <a href="/vk_oauth/logout/">
+                        <input type="button" value="Выйти" />
+                    </a>
+                    <p style="display: none;">
+                        ID (Уникальный номер): {{ ass.extra_data.id }}<br>
+                        Время окончания токена: {{ ass.extra_data.expires }}<br>
+                        Токен: {{ ass.extra_data.access_token }}
+                    </p>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+<!-- <div class="row">
+        <h1>Завки</h1>
+        <hr />
+        {% if latest_question_list %}
+        <ul>
+          {% for question in latest_question_list %}
+          <li>
+            <a href="{% url 'detail' question.id %}"
+              >{{ question.question_text }}</a
+            >
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p>Нет доступных заявок.</p>
+        {% endif %}
+        <hr />
+      </div> -->

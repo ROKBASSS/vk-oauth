@@ -1,0 +1,63 @@
+.social-buttons {
+  display: grid;
+  grid-template-rows: 8rem 3rem;
+  grid-template-columns: auto;
+  grid-gap: 0.5rem;
+  justify-items: center;
+}
+.social-buttons img {
+  width: 8rem;
+  height: 8rem;
+}
+.friends {
+  margin-top: 6rem;
+  display: grid;
+  grid-template-rows: 15rem 15rem 15rem;
+  grid-template-columns: 15rem 15rem 15rem;
+  grid-gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  width: 1000px;
+  position: absolute;
+  left: 25%;
+}
+.friends .text{
+text-align: center;
+}
+
+.friend {
+  border: 0.2rem rgba(128, 128, 128, 0.4) solid;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: grid;
+}
+.social-buttons input {
+  border: 0.1rem white solid;
+  border-radius: 0.25rem;
+  width: 15rem;
+  height: 3rem;
+}
+
+input {
+  border: 0.1rem white solid;
+  border-radius: 0.25rem;
+  width: 10rem;
+  height: 3rem;
+}
+
+body {
+  width: 80%;
+  margin: 0 auto;
+}
+.container {
+  position: relative;
+  top: 40%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.container .row {
+  margin-top: 0.5rem;
+  padding-bottom: 0.25rem;
+}

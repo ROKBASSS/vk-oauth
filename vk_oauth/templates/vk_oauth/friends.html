@@ -1,0 +1,22 @@
+{% extends "vk_oauth/base.html" %}
+{% block title%}Друзья{% endblock %}
+{% block content %}
+<div class="friends">
+    {% for friend in friends %}
+    <div class="friend">
+        <img src="{{ friend.photo_200 }}" alt="Фото" style="width: 170px; height: 170px;"><br>
+        <div class="text">
+            ID: {{ friend.id }}<br>
+            Имя: {{ friend.first_name }}<br>
+            Фамилия: {{ friend.last_name }}<br>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="friend">
+        <a href="/">
+            <input type="button" value="Назад">
+        </a>
+    </div>
+</div>
+
+{% endblock %}
